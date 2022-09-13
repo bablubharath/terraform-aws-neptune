@@ -1,12 +1,12 @@
 resource "aws_neptune_cluster_instance" "example" {
-  count                        = var.instance["count"]
-  apply_immediately            = var.instance["apply_immediately"]
+  count                        = var.count
+  apply_immediately            = var.apply_immediately
   availability_zone            = ""
   cluster_identifier           = aws_neptune_cluster.default.id
   engine_version               = ""
-  engine                       = var.instance["engine"]
+  engine                       = var.engine
   identifier                   = var.identifier
-  instance_class               = var.instance["instance_class"]
+  instance_class               = var.instance_class
   neptune_subnet_group_name    = aws_neptune_subnet_group.default.name
   neptune_parameter_group_name = aws_neptune_parameter_group.examplea.name
   port                         = 8182
@@ -19,6 +19,5 @@ resource "aws_neptune_cluster_instance" "example" {
 
 variable "identifier" {
   type        = string
-  default     = "example-a"
   description = "(optional) describe your variable"
 }
