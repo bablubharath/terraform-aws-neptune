@@ -11,12 +11,22 @@ variable "cluster" {
 
 variable "instance" {
   type = map(any)
-  default = {
-    count             = 2
-    engine            = "neptune"
-    instance_class    = "db.r4.large"
-    apply_immediately = true
-  }
+  apply_immediately = true
+}
+
+variable "count" {
+  type = any
+  description = "number of instances"
+}
+
+variable "engine" {
+  type = any
+  description = "Neptune engine name"
+}
+
+variable "instance_class" {
+  type = any
+  description = "type of neptune instance or instance class"
 }
 
 variable "subnet_group_name" {
