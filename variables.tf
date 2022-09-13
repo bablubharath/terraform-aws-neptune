@@ -9,11 +9,6 @@ variable "cluster" {
   type        = map(any)
 }
 
-variable "instance" {
-  type = map(any)
-  apply_immediately = true
-}
-
 variable "count" {
   type = any
   description = "number of instances"
