@@ -1,10 +1,10 @@
 resource "aws_neptune_cluster" "default" {
-  apply_immediately                    = var.cluster["apply_immediately"]
+  apply_immediately                    = var.apply_immediately
   availability_zones                   = data.aws_availability_zones.available.names
   backup_retention_period              = var.cluster["backup_retention_period"]
-  cluster_identifier                   = var.cluster["cluster_identifier"]
+  cluster_identifier                   = var.cluster_identifier
   enable_cloudwatch_logs_exports       = ["audit"]
-  engine                               = var.cluster["engine"]
+  engine                               = var.engine
   iam_database_authentication_enabled  = var.cluster["iam_database_authentication_enabled"]
   iam_roles                            = []
   kms_key_arn                          = var.kms_key_arn
