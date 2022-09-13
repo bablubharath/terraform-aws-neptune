@@ -24,6 +24,11 @@ variable "instance_class" {
   description = "type of neptune instance or instance class"
 }
 
+variable "apply_immediately" {
+  type = bool
+  description = "true or false"
+}
+
 variable "subnet_group_name" {
   default = "main"
 }
