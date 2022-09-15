@@ -1,6 +1,6 @@
 resource "aws_neptune_cluster" "default" {
   apply_immediately                    = var.apply_immediately
-  availability_zones                   = data.aws_availability_zones.available.names
+  availability_zones                   = var.availability_zones
   backup_retention_period              = var.cluster["backup_retention_period"]
   cluster_identifier                   = var.cluster_identifier
   enable_cloudwatch_logs_exports       = ["audit"]
