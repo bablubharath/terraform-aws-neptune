@@ -10,17 +10,17 @@ variable "cluster" {
 }
 
 variable "count" {
-  type = any
+  type = number
   description = "number of instances"
 }
 
 variable "engine" {
-  type = any
+  type = string
   description = "Neptune engine name"
 }
 
 variable "instance_class" {
-  type = any
+  type = string
   description = "type of neptune instance or instance class"
 }
 
@@ -45,4 +45,10 @@ variable "vpc_id" {
 variable "kms_key_arn" {
   type        = string
   description = ""
+}
+
+variable "availability_zones" {
+  type        = list(string)
+  description = "Availability Zone the instance is launched in. If not set, will be launched in the first AZ of the region"
+  default     = []
 }
